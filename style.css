@@ -1,0 +1,228 @@
+* {
+    border: none;
+    outline: none;
+    user-select: none;
+}
+
+:root {
+    --bg-color: #279AF1;
+    --second-bg-color: #badcff;
+    --gb-active: #595959;
+    --text-color: #313335;
+    --text-color-hover: #474747;
+    --text-selection: #4bcfff;
+    --scrollbar-track-color: #afafaf;
+    --animation: animate 1s linear infinite;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+}
+
+main {
+    width: 70%;
+    margin: 50px auto;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 3.8em;
+    width: fit-content;
+    margin: 0 auto;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1:hover {
+    cursor: default;
+    color: var(--text-color-hover);
+}
+
+/* Textarea */
+.text-area {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+textarea {
+    width: 95%;
+    min-width: 95%;
+    max-width: 95%;
+
+    height: 45vh;
+    min-height: 30vh;
+    max-height: 60vh;
+
+    padding: 10px;
+    font-size: 2em;
+    border-radius: 5px;
+    background: var(--second-bg-color);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+textarea::selection {
+    background: var(--text-selection);
+}
+
+/* Scrollbar */
+textarea::-webkit-scrollbar {
+    width: 13px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color)
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color-hover);
+}
+
+textarea::-webkit-scrollbar-thumb:active {
+    background: var(--gb-active);
+}
+
+/* Buttons */
+.btns {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    color: #EEE;
+    font-size: 20px;
+    padding: 11px 20px;
+    border-radius: 5px;
+    background: var(--text-color);
+}
+
+button:hover {
+    cursor: pointer;
+    background: var(--text-color-hover);
+}
+
+button:active {
+    background: var(--gb-active);
+}
+
+/* imges */
+.voice,
+.arabic,
+.rate,
+.erase {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    background: #bcd4e4;
+}
+
+.erase {
+    border-radius: 50%;
+    animation: var(--animation);
+}
+
+.voice,
+.arabic,
+.rate {
+    position: fixed;
+    left: 0;
+    padding: 10px 10px 10px 15px;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.voice {
+    top: 30px;
+}
+
+.arabic {
+    top: 90px;
+}
+
+.rate {
+    top: 150px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.voice:hover,
+.arabic:hover,
+.rate:hover,
+.erase:hover {
+    background: #AAB8C2;
+    cursor: pointer;
+}
+
+.voice:hover,
+.arabic:hover, 
+.rate:hover {
+    padding-left: 20px;
+}
+
+.voice:hover img,
+.arabic:hover img {
+    animation: var(--animation);
+}
+
+.voice:active,
+.arabic:active,
+.rate:active,
+.erase:active {
+    background: #EEE;
+}
+
+/* dialog */
+dialog {
+    width: 380px;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+dialog input:hover {
+    cursor: pointer;
+}
+
+dialog button {
+    margin-top: 1rem;
+}
+
+#dialog_1 label,
+#dialog_3 label {
+    font-size: 1.3em;
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .btns {
+        flex-direction: column;
+    }
+}
+
+.flex-between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.width-450 {
+    width: calc(380px / 3);
+}

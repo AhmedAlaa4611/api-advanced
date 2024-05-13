@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="online SpeechRecognition and SpeechSynthesisUtterance">
+
+        <!-- title -->
+        <title>My API Project</title>
+
+        <!-- link -->
+        <link href="img/Logo.ico" rel="icon">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- images -->
+        <div class="voice"><img src="img/cog-outline.svg"></div>
+        <div class="arabic"><img src="img/settings-outline.svg"></div>
+        <div class="rate"><img src="img/wave-square-solid.svg"></div>
+        <!-- dialog #1 -->
+        <dialog id="dialog_1">
+            <h2>select your voice</h2>
+            <div class="flex-between">
+                <!-- Male -->
+                <div class="width-450">
+                    <input id="radio_1" type="radio" name="voices" checked>
+                    <label>Male</label>
+                </div>
+                <!-- Female -->
+                <div class="width-450">
+                    <input id="radio_2" type="radio" name="voices">
+                    <label>Female</label>
+                </div>
+                <!-- Default -->
+                <div class="width-450">
+                    <input id="radio_3" type="radio" name="voices">
+                    <label>Default</label><br>
+                </div>
+                <!-- French -->
+                <div class="width-450">
+                    <input id="radio_4" type="radio" name="voices">
+                    <label>French</label>
+                </div>
+                <!-- German -->
+                <div class="width-450">
+                    <input id="radio_5" type="radio" name="voices">
+                    <label>German</label>
+                </div>
+                <!-- Italian -->
+                <div class="width-450">
+                    <input id="radio_6" type="radio" name="voices">
+                    <label>Italian</label><br>
+                </div>
+            </div>
+            <!-- button -->
+            <button id="Done">Done</button>
+        </dialog>
+        <!-- dialog #2 -->
+        <dialog id="dialog_2">
+            <h2> هل تريد تحوييل اللغه الى العربيه؟ </h2>
+            <button id="Yes"> نعم </button>
+            <button id="No"> لا </button>
+        </dialog>
+        <!-- dialog #3 -->
+        <dialog id="dialog_3">
+            <h2>you need the voice to be slow?</h2>
+                <div>
+                    <input id="voice_rate" type="checkbox" name="voice-rate" checked>
+                    <label>Voice rate slow</label>
+                </div>
+            <!-- button -->
+            <button id="Done2">Done</button>
+        </dialog>
+        <!-- main -->
+        <main>
+            <h1>voice to text API</h1>
+            <div class="text-area">
+                <textarea id="TextArea" placeholder="Type your text here."></textarea>
+                <img class="erase" src="img/close-outline.svg">
+            </div>
+            <div class="btns">
+                <button id="saye">Say your text</button>
+                <button id="read">Read text</button>
+                <button id="retext">Retext</button>
+                <button id="copy">Copy text</button>
+                <button id="download">Download as a text</button>
+            </div>
+        </main>
+        <!-- script -->
+        <script src="scripts/api.js"></script>
+        <script src="scripts/img-voices.js"></script>
+        <script src="scripts/img-arabic.js"></script>
+        <script src="scripts/img-rate.js"></script>
+        <script src="scripts/img-erase.js"></script>
+    </body>
+</html>
+<!-- https://cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages -->
